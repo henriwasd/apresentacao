@@ -23,6 +23,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  shared_preferences: ">=0.5.0 <2.0.0"
+  rxdart: ^0.25.0
+  dio: ^3.0.10
+  search_cep: ^3.0.0+2
+  masked_text: ^0.0.6
 
 
   # The following adds the Cupertino Icons font to your application.
