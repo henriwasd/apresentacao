@@ -11,7 +11,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:apresentacao/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Contagem do poder do Bruxo', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
 
@@ -26,5 +26,23 @@ void main() {
     // Verify that our counter has incremented.
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
+
+    await tester.tap(find.byIcon(Icons.remove));
+    await tester.pump();
+
+    expect(find.text('1'), findsNothing);
+    expect(find.text('0'), findsOneWidget);
+  });
+
+  testWidgets('Nome do Bruxo', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp());
+
+    String name = "Ronaldinho Gaucho";
+
+    await tester.enterText(find.byKey(Key('name')), name);
+
+    await tester.pump();
+
+    expect(find.text(name), findsOneWidget);
   });
 }

@@ -118,6 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   textAlign: TextAlign.center,
                 ),
                 TextFormField(
+                  key: Key('name'),
                   onSaved: (String value) {
                     name = value;
                   },
